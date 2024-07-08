@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class UsernameValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first username: ");
+        String username1 = scanner.nextLine();
+        System.out.print("Enter the second username: ");
+        String username2 = scanner.nextLine();
+        boolean isValidUsername1 = isValidUsername(username1);
+        boolean isValidUsername2 = isValidUsername(username2);
+        System.out.println("First username (" + username1 + ") is " + (isValidUsername1 ? "valid" : "invalid"));
+        System.out.println("Second username (" + username2 + ") is " + (isValidUsername2 ? "valid" : "invalid"));
+    }
+    public static boolean isValidUsername(String username) {
+        if (username.length() < 5 || username.length() > 15) {
+            return false;
+        }
+        for (char c : username.toCharArray()) {
+            if (!Character.isLetterOrDigit(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+OUTPUT:-
+Enter the first username: yashwanth vommena
+Enter the second username: yashwanth00230
+First username (yashwanth vommena) is invalid
+Second username (yashwanth00230) is valid
