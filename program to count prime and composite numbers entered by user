@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class CountPrimesAndComposites {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        int[] array = new int[n];
+        System.out.println("Enter the elements: ");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
+        int primeCount = 0;
+        int compositeCount = 0;
+        for (int i = 0; i < n; i++) {
+            if (isPrime(array[i])) {
+                primeCount++;
+            } else if (array[i] > 1) {
+                compositeCount++;
+            }
+        }
+        System.out.println("Number of prime numbers: " + primeCount);
+        System.out.println("Number of composite numbers: " + compositeCount);
+        scanner.close();
+    }
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+OUTPUT:-
+Enter the number of elements: 10
+Enter the elements: 
+1 7 34 64 75 34 21 64 09 98 
+Number of prime numbers: 1
+Number of composite numbers: 8
