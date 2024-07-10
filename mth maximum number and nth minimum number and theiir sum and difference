@@ -1,0 +1,49 @@
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+        System.out.println("Enter the elements of the array: ");
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+        System.out.print("Enter the value of m (for mth maximum): ");
+        int m = scanner.nextInt();
+        System.out.print("Enter the value of n (for nth minimum): ");
+        int n = scanner.nextInt();
+        if (m <= 0 || m > size || n <= 0 || n > size) {
+            System.out.println("m and n must be between 1 and " + size);
+            scanner.close();
+            return;
+        }
+        Arrays.sort(array);
+        int mthMax = array[size - m];
+        int nthMin = array[n - 1];
+        int sum = mthMax + nthMin;
+        int difference = mthMax - nthMin;
+        System.out.println("The " + m + "th maximum number is: " + mthMax);
+        System.out.println("The " + n + "th minimum number is: " + nthMin);
+        System.out.println("The sum of the " + m + "th maximum and " + n + "th minimum is: " + sum);
+        System.out.println("The difference between the " + m + "th maximum and " + n + "th minimum is: " + difference);
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Enter the size of the array: 5
+Enter the elements of the array: 
+12
+4
+5
+6
+10
+Enter the value of m (for mth maximum): 2
+Enter the value of n (for nth minimum): 3
+The 2th maximum number is: 10
+The 3th minimum number is: 6
+The sum of the 2th maximum and 3th minimum is: 16
+The difference between the 2th maximum and 3th minimum is: 4
