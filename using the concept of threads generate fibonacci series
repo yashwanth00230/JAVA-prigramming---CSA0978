@@ -1,0 +1,37 @@
+import java.util.Scanner;
+class FibonacciGenerator extends Thread {
+    private int n;
+    public FibonacciGenerator(int n) {
+        this.n = n;
+    }
+    @Override
+    public void run() {
+        generateFibonacci(n);
+    }
+    private void generateFibonacci(int n) {
+        int a = 0, b = 1, c;
+        System.out.print("Fibonacci series up to " + n + " terms: ");
+        for (int i = 1; i <= n; i++) {
+            System.out.print(a + " ");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        System.out.println();
+    }
+}
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of terms for the Fibonacci series: ");
+        int n = scanner.nextInt();
+        FibonacciGenerator fibonacciGenerator = new FibonacciGenerator(n);
+        fibonacciGenerator.start();
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Enter the number of terms for the Fibonacci series: 5
+Fibonacci series up to 5 terms: 0 1 1 2 3 
