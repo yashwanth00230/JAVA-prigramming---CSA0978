@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class BankInterest {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Select a bank to get the rate of interest:");
+        System.out.println("1. SBI");
+        System.out.println("2. ICICI");
+        System.out.println("3. AXIS");
+        System.out.print("Enter your choice (1, 2, or 3): ");
+        int choice = scanner.nextInt();
+        double rateOfInterest = 0.0;
+        switch (choice) {
+            case 1:
+                rateOfInterest = 8.4;
+                break;
+            case 2:
+                rateOfInterest = 7.3;
+                break;
+            case 3:
+                rateOfInterest = 9.7;
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                System.exit(0);
+        }
+        System.out.println("Rate of Interest: " + rateOfInterest + "%");
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Select a bank to get the rate of interest:
+1. SBI
+2. ICICI
+3. AXIS
+Enter your choice (1, 2, or 3): 1
+Rate of Interest: 8.4%
