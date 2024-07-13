@@ -1,0 +1,25 @@
+import java.util.Scanner;
+public class LengthOfLastWord {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string of words and spaces: ");
+        String s = scanner.nextLine();
+        int lengthOfLastWord = findLengthOfLastWord(s);
+        System.out.println("Length of the last word: " + lengthOfLastWord);
+        scanner.close();
+    }
+    public static int findLengthOfLastWord(String s) {
+        s = s.trim();
+        int lastSpaceIndex = s.lastIndexOf(' ');
+        if (lastSpaceIndex == -1) {
+            return s.length();
+        } else {
+            return s.length() - lastSpaceIndex - 1;
+        }
+    }
+}
+
+
+OUTPUT:-
+Enter a string of words and spaces: java is a easy language
+Length of the last word: 8
