@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class SumOfNNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements (N): ");
+        int n = scanner.nextInt()
+        int[] numbers = new int[n];
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        int sum = 0;
+        try {
+            for (int i = 0; i <= n; i++) { // intentionally using <= to cause ArrayIndexOutOfBoundsException
+                sum += numbers[i];
+            }
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException caught: Index " + n + " is out of bounds.");
+        }
+        System.out.println("The sum of the numbers is: " + sum);
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Enter the number of elements (N): 5
+Enter 5 numbers:
+1 2 3 4 5
+ArrayIndexOutOfBoundsException caught: Index 5 is out of bounds.
+The sum of the numbers is: 15
