@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class NumberPattern {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number to be printed:");
+        int number = scanner.nextInt();
+        System.out.println("Max Number of times printed:");
+        int maxTimes = scanner.nextInt();
+        for (int i = 1; i <= maxTimes; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(number);
+            }
+            System.out.println();
+        }
+        for (int i = maxTimes - 1; i >= 1; i--) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print(number);
+            }
+            System.out.println();
+        }
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Enter the number to be printed:
+6
+Max Number of times printed:
+5
+6
+66
+666
+6666
+66666
+6666
+666
+66
+6
