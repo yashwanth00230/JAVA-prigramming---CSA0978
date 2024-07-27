@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class PalindromeChecker {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string to check if it is a palindrome: ");
+        String inputString = scanner.nextLine();
+        String cleanedString = inputString.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+        String reversedString = new StringBuilder(cleanedString).reverse().toString();
+        if (cleanedString.equals(reversedString)) {
+            System.out.println("The string is a palindrome.");
+        } else {
+            System.out.println("The string is not a palindrome.");
+        }
+        System.out.print("Enter a number to check if it is a palindrome: ");
+        String inputNumber = scanner.nextLine();
+        String reversedNumber = new StringBuilder(inputNumber).reverse().toString();
+        if (inputNumber.equals(reversedNumber)) {
+            System.out.println("The number is a palindrome.");
+        } else {
+            System.out.println("The number is not a palindrome.");
+        }
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Enter a string to check if it is a palindrome: madam
+The string is a palindrome.
+Enter a number to check if it is a palindrome: 12321
+The number is a palindrome.
