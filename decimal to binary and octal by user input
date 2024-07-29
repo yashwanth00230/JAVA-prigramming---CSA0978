@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class DecimalConverter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a decimal number: ");
+        int decimalNumber = scanner.nextInt();
+        String binaryString = Integer.toBinaryString(decimalNumber);
+        System.out.println("Binary representation: " + binaryString);
+        String octalString = Integer.toOctalString(decimalNumber);
+        System.out.println("Octal representation: " + octalString);
+        scanner.close();
+    }
+}
+
+
+Output:-
+Enter a decimal number: 15
+Binary representation: 1111
+Octal representation: 17
