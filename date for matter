@@ -1,0 +1,22 @@
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+public class DayOfWeekCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter day (1-31): ");
+        int day = scanner.nextInt();
+        System.out.print("Enter month (1-12): ");
+        int month = scanner.nextInt();
+        System.out.print("Enter year: ");
+        int year = scanner.nextInt();
+        LocalDate date = LocalDate.of(year, month, day);
+        String dayOfWeek = date.getDayOfWeek().toString();
+        String formattedDayOfWeek = dayOfWeek.charAt(0) + dayOfWeek.substring(1).toLowerCase();
+        System.out.println("The day of the week is: " + formattedDayOfWeek);
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
