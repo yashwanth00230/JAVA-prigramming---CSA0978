@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class DuplicateZeros {
+    public static void duplicateZeros(int[] arr) {
+        int n = arr.length;
+        int zeros = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] == 0) {
+                zeros++;
+            }
+        }
+        for (int i = n - 1; i >= 0; i--) {
+            if (arr[i] == 0) {
+                if (i + zeros < n) {
+                    arr[i + zeros] = 0;
+                }
+                zeros--;
+                if (i + zeros < n) {
+                    arr[i + zeros] = 0;
+                }
+            } else {
+                if (i + zeros < n) {
+                    arr[i + zeros] = arr[i];
+                }
+            }
+        }
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements in the array: ");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        System.out.println("Original array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        duplicateZeros(arr);
+        System.out.println("Modified array:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        scanner.close();
+    }
+}
+
+
+OUTPUT:-
+Enter the number of elements in the array: 8
+Enter the elements of the array:
+1 0 2 3 0 4 5 0
+Original array:
+1 0 2 3 0 4 5 0 
+Modified array:
+1 0 0 2 3 0 0 4 
