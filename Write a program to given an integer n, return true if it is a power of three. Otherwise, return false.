@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class PowerOfThree {
+    public static boolean isPowerOfThree(int n) {
+        if (n <= 0) {
+            return false;
+        }
+        while (n % 3 == 0) {
+            n /= 3;
+        }
+        return n == 1;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int n = scanner.nextInt();
+        boolean result = isPowerOfThree(n);
+        System.out.println("Input = " + n);
+        System.out.println("Output = " + result);
+        if (result) {
+            System.out.println("Explanation: " + n + " = 3^" + (int)(Math.log(n) / Math.log(3)));
+        }
+        scanner.close();
+    }
+}
+
+
+
+OUTPUT:-
+Enter an integer: 27
+Input = 27
+Output = true
+Explanation: 27 = 3^3
