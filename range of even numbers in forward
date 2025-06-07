@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class EvenRangeForward{
+    public static void main(String[]args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the start number :");
+        int start = scanner.nextInt();
+        System.out.print("Enter the end number :");
+        int end = scanner.nextInt();
+        System.out.print("Even numbers in forward range :");
+        for (int i=start;i<=end;i++){
+            if (i%2==0){
+                System.out.print(i + " ");
+            }
+        }
+        scanner.close();
+    }
+}
+
+
+
+OUTPUT :-
+Enter the start number :2
+Enter the end number :10
+Even numbers in forward range :2 4 6 8 10 
