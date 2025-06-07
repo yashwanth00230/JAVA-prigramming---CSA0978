@@ -1,0 +1,35 @@
+import java.util.Scanner;
+public class BreakContinueWithInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter numbers (enter -1 to stop, skip 0 using continue):");
+        while (true) {
+            System.out.print("Enter a number: ");
+            int num = scanner.nextInt();
+            if (num == -1) {
+                System.out.println("Break triggered. Exiting loop.");
+                break; 
+            }
+            if (num == 0) {
+                System.out.println("Continue triggered. Skipping this iteration.");
+                continue;
+            }
+            System.out.println("You entered: " + num);
+        }
+        scanner.close();
+    }
+}
+
+
+
+OUTPUT :-
+Enter numbers (enter -1 to stop, skip 0 using continue):
+Enter a number: 5
+You entered: 5
+Enter a number: 
+0
+Continue triggered. Skipping this iteration.
+Enter a number: 8
+You entered: 8
+Enter a number: -1
+Break triggered. Exiting loop.
